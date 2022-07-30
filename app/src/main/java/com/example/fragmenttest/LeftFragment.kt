@@ -1,5 +1,6 @@
 package com.example.fragmenttest
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,11 @@ class LeftFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Get MainActivity instance
+        // Notice that invoke getActivity() may return null
+        if (activity != null) {
+            val mainActivity = activity as MainActivity
+        }
         return inflater.inflate(R.layout.left_fragment, container, false)
     }
 }
